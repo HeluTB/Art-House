@@ -1,4 +1,10 @@
 //Script to handle form popup, toggling between login and register
+var users=[]
+var user={
+    username:'',
+    Email: '',
+    pswd: ''
+}
 const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
@@ -26,20 +32,42 @@ loginBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     wrapper.classList.remove("active-popup");
 });
-
+menuToggle.addEventListener('click', () => {
+    if(dropdown.classList.contains("hidden")){
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("show");
+        dropdown.style.display = 'flex';
+        console.log("i am visible");
+    }
+    else if(dropdown.classList.contains("show")){
+        dropdown.classList.remove("show");
+        dropdown.classList.add("hidden");
+        dropdown.style.display = 'none';
+    }
+    
+});
 // Custom validation for login form
 function validateLoginForm() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    if(email !== ""){
+    /* if(email !== ""){
+        const label = document.querySelector('.input-box input:focus ~ label', '.input-box input:valid ~ label');
         
-    }
+    } */
     if (email === "" || password === "") {
         alert("All fields are required.");
         return false;
     }
     if (!validateEmail(email)) {
         alert("Please enter a valid email address.");
+        return false;
+    }
+    if(email == users.Email && password == users.pswd){
+        alert("Login now.");
+
+    }
+    else{
+        alert("Email or password is invalid!");
         return false;
     }
     return true;
@@ -69,16 +97,16 @@ function validateRegisterForm() {
     }
     return true;
 }
-
+if(validateRegisterForm() == true){
+    let u = new user;
+    u.Email = email;
+    u.username = username;
+    u.pswd = password;
+    users.push(u);
+}
 // Email validation function
 function validateEmail(email) {
     const re = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     return re.test(String(email).toLowerCase());
 }
 
-menuToggle.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-});
-menuToggle.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-});
