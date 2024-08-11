@@ -1,51 +1,110 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const showLoginButton = document.getElementById('show-login');
-    const showSignupButton = document.getElementById('show-signup');
-    const formContainer = document.getElementById('form-container');
-    // const homeContainer = document.getElementById('home-container'); // No longer needed
+//Script to handle form popup, toggling between login and register
+var users=[]
+var user={
+    username:'',
+    Email: '',
+    pswd: ''
+}
+const wrapper = document.querySelector(".wrapper");
+const loginLink = document.querySelector(".login-link");
+const registerLink = document.querySelector(".register-link");
+const loginBtn = document.querySelector(".login");
+const closeBtn = document.querySelector(".icon-close");
+const menuToggle = document.querySelector('.menu-toggle');
+const dropdown = document.querySelector('.dropdown');
 
-    showLoginButton.addEventListener('click', function () {
-        loginForm.classList.add('active');
-        signupForm.classList.remove('active');
-    });
-
-    showSignupButton.addEventListener('click', function () {
-        signupForm.classList.add('active');
-        loginForm.classList.remove('active');
-    });
-
-    // Handle form submission and navigation
-    loginForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Simulate validation
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-
-        if (email === 'user@example.com' && password === 'password') {
-            // Redirect to gallery page after successful login
-            window.location.href = 'gallery.html';
-        } else {
-            alert('Invalid login credentials');
-        }
-    });
-
-    signupForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Simulate validation
-        const username = document.getElementById('signup-username').value;
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
-        const confirmPassword = document.getElementById('signup-confirm-password').value;
-
-        if (password === confirmPassword) {
-            // Redirect to gallery page after successful sign-up
-            window.location.href = 'gallery.html';
-        } else {
-            alert('Passwords do not match');
-        }
-    });
+// Show registration form
+registerLink.addEventListener("click", () => {
+    wrapper.classList.add("active");
 });
+
+// Show login form
+loginLink.addEventListener("click", () => {
+    wrapper.classList.remove("active");
+});
+
+// Show form popup
+loginBtn.addEventListener("click", () => {
+    wrapper.classList.add("active-popup");
+});
+
+// Close form popup
+closeBtn.addEventListener("click", () => {
+    wrapper.classList.remove("active-popup");
+});
+menuToggle.addEventListener('click', () => {
+    if(dropdown.classList.contains("hidden")){
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("show");
+        dropdown.style.display = 'flex';
+        console.log("i am visible");
+    }
+    else if(dropdown.classList.contains("show")){
+        dropdown.classList.remove("show");
+        dropdown.classList.add("hidden");
+        dropdown.style.display = 'none';
+    }
+    
+});
+// Custom validation for login form
+function validateLoginForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    if (email === "" || password === "") {
+        alert("All fields are required.");
+        return false;
+    }
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+    if(email == users.Email && password == users.pswd){
+        window.location.href = 'gallery.html';
+    }
+    else{
+        alert("Email or password is invalid!");
+        return false;
+    }
+    return true;
+}
+
+// Custom validation for registration form
+function validateRegisterForm() {
+    event.preventDefault();
+    const username = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const terms = document.getElementById("terms").checked;
+    if (username === "" || email === "" || password === "") {
+        alert("All fields are required.");
+        return false;
+    }
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+    }
+    if (!terms) {
+        alert("You must agree to the terms and conditions.");
+        return false;
+    }
+    alert("Login now.");
+    return true;
+}
+if(validateRegisterForm() == true){
+    let u = new user;
+    u.Email = email;
+    u.username = username;
+    u.pswd = password;
+    users.push(u);
+    validateLoginForm();
+}
+// Email validation function
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
