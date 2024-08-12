@@ -17,7 +17,7 @@ body {
   scroll-behavior: smooth;
 }
 header {
-  background-image: url(images/catiamatos.jpg);
+  background-image: url(/images/catiamatos.jpg);
   background-size: cover;
   color: #fff;
   text-align: center;
