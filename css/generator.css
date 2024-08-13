@@ -8,6 +8,8 @@ body {
 	padding: 0; 
 	margin: 0; 
 	box-sizing: border-box; 
+	background-image: url(/images/beautiful-mountain-lake-background-remix.jpg);
+	background-size: cover;
 } 
 
 .main-container { 
@@ -37,7 +39,7 @@ body {
 
 .headings-container { 
 	text-align: center; 
-	color: #000; 
+	color: white; 
 } 
 
 .form-controls { 
@@ -59,7 +61,7 @@ input:focus {
 } 
 
 #imageContainerText { 
-	color: #000; 
+	color: white; 
 } 
 
 .image-container { 
