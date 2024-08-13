@@ -89,56 +89,7 @@ header {
   color: #162938;
 }
 
-.dropdown {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background-color: #162938;
-  border-radius: 6px;
-  display: none;
-  flex-direction: column;
-  z-index: 100;
-  
-}
-.dropdown.hidden{
-  display:none;
-}
-.dropdown.show{
-  display: flex;
-  flex-direction: column;
-  align-items: cover;
-  right: 8px;
-}
 
-.dropdown.show a,
-.dropdown.show .login {
-  padding: 10px 0px;
-  text-align: center;
-  margin-left: 0;
-  padding: 8px 20px;
-  font-size: 1em;
-  text-decoration: none;
-  font-weight: 500;
-  color: white;
-  border-bottom: 1px solid #444;
-}
-
-.dropdown .login {
-  border: none;
-  background: transparent;
-}
-.dropdown a:hover{
-  background-color: #2a3035;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2em;
-  cursor: pointer;
-}
 
 /* Wrapper styling for login/register forms */
 .wrapper {
@@ -273,6 +224,7 @@ header {
   line-height: 70px;
 }
 
+
 /* Remember me and forgot password section */
 .remember-forgot {
   font-size: 0.9em;
@@ -344,19 +296,11 @@ header {
     padding: 20px 25px;
   }
 
-  /* Show the menu toggle button on smaller screens */
-  .navigation .menu-toggle {
-    display: block;
-    margin-left: 8px;
-  }
   .navigation{
     display: flex; }
   /* Hide the original navigation links on smaller screens */
   .navigation a{
     display: none;
-  }
-  .dropdown.show{
-    display: block;
   }
   .wrapper {
     /* Adjust wrapper width to be more responsive on smaller screens */
@@ -397,18 +341,6 @@ header {
     font-size: 0.8em;
     margin-left: 10px;
   }
-  .menu-toggle {
-    display: block;
-  }
-
-  .dropdown {
-    display: flex;
-    flex-direction: column;
-    top: 50px;
-    right: 20px;
-    width: 200px;
-    background-color: #162938;
-  }
 
   .wrapper {
     /* Adjust wrapper width to fit the screen width */
@@ -431,10 +363,5 @@ header {
   .input-box {
     /* Adjust margin for input boxes to provide better spacing */
     margin: 20px 0;
-  }
-}
-@media (min-width: 889px){
-  .dropdown.show{
-    visibility: hidden;
   }
 }
