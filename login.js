@@ -9,6 +9,7 @@ const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
 const loginBtn = document.querySelector(".login");
+const registerBtn = document.querySelector(".btn");
 const closeBtn = document.querySelector(".icon-close");
 const menuToggle = document.querySelector('.menu-toggle');
 const dropdown = document.querySelector('.dropdown');
@@ -26,6 +27,9 @@ loginLink.addEventListener("click", () => {
 // Show form popup
 loginBtn.addEventListener("click", () => {
     wrapper.classList.add("active-popup");
+});
+registerBtn.addEventListener("click", () => {
+    validateRegisterForm();
 });
 
 // Close form popup
@@ -70,7 +74,7 @@ function validateLoginForm() {
 
 // Custom validation for registration form
 function validateRegisterForm() {
-    event.preventDefault();
+    
     const username = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
