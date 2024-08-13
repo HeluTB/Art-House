@@ -1,10 +1,36 @@
 //Script to handle form popup, toggling between login and register
-var users=[]
-var user={
-    username:'',
-    Email: '',
-    pswd: ''
-}
+var users = [
+    {
+        username: 'kaleb',
+        Email: 'kaleb@gmail.com',
+        pswd: '123456'
+    },
+    {
+        username: 'kaleb',
+        Email: 'kaleb@gmail.com',
+        pswd: '123456'
+    },
+    {
+        username: 'kaleb',
+        Email: 'kaleb@gmail.com',
+        pswd: '123456'
+    },
+    {
+        username: 'kaleb',
+        Email: 'kaleb@gmail.com',
+        pswd: '123456'
+    },
+    {
+        username: 'kaleb',
+        Email: 'kaleb@gmail.com',
+        pswd: '123456'
+    }
+];
+var user = {
+    username: 'kaleb',
+    Email: 'kaleb@gmail.com',
+    pswd: '123456'
+};
 const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
@@ -37,18 +63,18 @@ closeBtn.addEventListener("click", () => {
     wrapper.classList.remove("active-popup");
 });
 menuToggle.addEventListener('click', () => {
-    if(dropdown.classList.contains("hidden")){
+    if (dropdown.classList.contains("hidden")) {
         dropdown.classList.remove("hidden");
         dropdown.classList.add("show");
         dropdown.style.display = 'flex';
         console.log("i am visible");
     }
-    else if(dropdown.classList.contains("show")){
+    else if (dropdown.classList.contains("show")) {
         dropdown.classList.remove("show");
         dropdown.classList.add("hidden");
         dropdown.style.display = 'none';
     }
-    
+
 });
 // Custom validation for login form
 function validateLoginForm() {
@@ -62,10 +88,13 @@ function validateLoginForm() {
         alert("Please enter a valid email address.");
         return false;
     }
-    if(email == users.Email && password == users.pswd){
+    const currentUser = users.find((usr) => {
+        return usr.Email == email && usr.pswd == password;
+    });
+    if (currentUser) {
         window.location.href = 'gallery.html';
     }
-    else{
+    else {
         alert("Email or password is invalid!");
         return false;
     }
@@ -98,7 +127,7 @@ function validateRegisterForm() {
     alert("Login now.");
     return true;
 }
-if(validateRegisterForm() == true){
+if (validateRegisterForm() == true) {
     let u = new user;
     u.Email = email;
     u.username = username;
