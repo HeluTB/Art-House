@@ -130,7 +130,7 @@ function displayCart() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (window.location.pathname.includes('home.html')) {
+  if (window.location.pathname.includes('index.html')) {
       setupHomePage();
   } else if (window.location.pathname.includes('cart.html')) {
       displayCart();
