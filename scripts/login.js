@@ -92,7 +92,7 @@ function validateLoginForm() {
         return usr.Email == email && usr.pswd == password;
     });
     if (currentUser) {
-        window.location.href = 'gallery.html';
+        window.location.href = 'home.html';
     }
     else {
         alert("Email or password is invalid!");

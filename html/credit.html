@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Art</title>
+    <link rel="stylesheet" href="/css/credit.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Credit Information</h2>
+        <form id="credit-form">
+            <div class="form-group">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card-name" required>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <button type="submit">Buy</button>
+        </form>
+    </div>
+    <script src="/scripts/credit.js"></script>
+</body>
+</html>
