@@ -1,3 +1,7 @@
+const buyBtn = document.querySelector(".Buy");
+buyBtn.addEventListener('click', ()=>{
+  window.location.href = '/html/credit.html';
+});
 function showNotification(message) {
   let notification = document.createElement('div');
   notification.classList.add('notification');
