@@ -1,15 +1,15 @@
 //Script to handle form popup, toggling between login and register
-var users;
+var users = [];
 var user;
 
 window.onload = loadUsers; // data loading function to be called when the website loads
 
 function loadUsers() {
-    if (localStorage.getItem('users.json') != null) {
+    if (localStorage.getItem('users-data') != null) {
 
-        users = JSON.parse(localStorage.getItem('users.json'));
+        users = JSON.parse(localStorage.getItem('users-data'));
       } else {
-        fetch('../data/users.json')
+        fetch('/scripts/users.json')
         .then(res => res.json())
         .then(data => {
             users = data; //loading the default users from the json file into an array if it doesn't exist in local storage
@@ -22,9 +22,8 @@ const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
 const loginBtn = document.querySelector(".login");
+const loginBtn2 = document.querySelector(".btn");
 const closeBtn = document.querySelector(".icon-close");
-const menuToggle = document.querySelector('.menu-toggle');
-const dropdown = document.querySelector('.dropdown');
 const registerBtn = document.querySelector('.regBtn');
 
 registerBtn.addEventListener('click', (e) => {
@@ -35,14 +34,15 @@ registerBtn.addEventListener('click', (e) => {
     const terms = document.querySelector(".termsReg").checked;
 
     if (validateRegisterForm(username,email,password,terms)) {
+        
         const usr = {
-            username: email,
-            Email: username,
+            username: username,
+            Email: email,
             pswd: password
         };
         users.push(usr);
         localStorage.setItem('users-data', JSON.stringify(users));
-        
+        user = usr;
     }
 });
 
@@ -57,8 +57,12 @@ loginLink.addEventListener("click", () => {
 });
 
 // Show form popup
-loginBtn.addEventListener("click", () => {
+loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     wrapper.classList.add("active-popup");
+});
+loginBtn2.addEventListener("click", (e) => {
+    e.preventDefault();
     if(validateLoginForm()){
         window.location.href = '/html/index.html';
         console.log(1);
@@ -69,19 +73,6 @@ loginBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     wrapper.classList.remove("active-popup");
 });
-menuToggle.addEventListener('click', () => {
-    if (dropdown.classList.contains("hidden")) {
-        dropdown.classList.remove("hidden");
-        dropdown.classList.add("show");
-        dropdown.style.display = 'flex';
-    }
-    else if (dropdown.classList.contains("show")) {
-        dropdown.classList.remove("show");
-        dropdown.classList.add("hidden");
-        dropdown.style.display = 'none';
-    }
-
-});
 // Custom validation for login form
 function validateLoginForm() {
     const email = document.getElementById("email").value;
@@ -91,7 +82,7 @@ function validateLoginForm() {
         return false;
     }
     if (!validateEmail(email)) {
-        alert("Please enter a valid email address while loging in.");
+        alert("Please enter a valid email address while logging in.");
         return false;
     }
     const currentUser = users.find((usr) => {
