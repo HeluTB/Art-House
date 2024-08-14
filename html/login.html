@@ -11,21 +11,7 @@
     <header>
       <div class="logo">ART HOUSE</div>
       <nav class="navigation">
-          <a href="index.html">Home</a>
-          <a href="index.html">About</a>
-          <a href="generator.html">AI</a>
-          <a href="cart.html">Cart</a>
           <button class="login">Login</button>
-
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <ion-icon name="menu"></ion-icon>
-        </button>
-        <div class="dropdown hidden">
-          <a href="index.html">Home</a>
-          <a href="index.html">About</a>
-          <a href="generator.html">AI</a>
-          <a href="cart.html">Cart</a>
-        </div>
         
       </nav>
     </header>
@@ -71,29 +57,29 @@
       <!-- Register form -->
       <div class="box register">
         <h2>Registration</h2>
-        <form action="#" method="post" onsubmit="return validateRegisterForm()">
+        <form action="#" method="post">
           <div class="input-box">
             <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" name="name" id="name" required />
+            <input type="text" name="name" id="name" class="nameReg" required />
             <label for="name">Username</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" name="email" id="email" required />
+            <input type="email" name="email" id="email" class="emailReg" required />
             <label for="email">Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" name="password" id="password" required />
+            <input type="password" name="password" id="password" class="passReg" required />
             <label for="password">Password</label>
           </div>
           <div class="remember-forgot">
             <label for="terms"
-              ><input type="checkbox" name="terms" id="terms" required />I agree
+              ><input type="checkbox" name="terms" id="terms" class="termsReg" required />I agree
               to the terms & conditions</label
             >
           </div>
-          <button onclick="validateRegisterForm()" type="submit" class="btn">Register</button>
+          <button type="submit" class="btn regBtn">Register</button>
           <div class="login-register">
             <p>
               Already have an account? <a href="#" class="login-link"> Login</a>
@@ -116,3 +102,4 @@
     ></script>
   </body>
 </html>
+git config --global user.email "MY_NAME@example.com"git config --global user.email "MY_NAME@example.com"

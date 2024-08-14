@@ -123,7 +123,7 @@ function displayCart() {
   checkoutButton.textContent = 'Proceed to Checkout';
   checkoutButton.id = 'checkoutButton';
   checkoutButton.addEventListener('click', function() {
-      window.location.href = 'checkout.html';
+      window.location.href = 'credit.html';
   });
   bottomDiv.appendChild(checkoutButton);
   cartContainer.appendChild(bottomDiv);
