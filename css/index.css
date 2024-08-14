@@ -17,7 +17,7 @@ body{
     position: fixed;
     align-items: center;
     display: flex;
-    background-color: black;
+    background: url(/images/kelly.jpg);
     z-index: 2;
     box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
 }
