@@ -1,0 +1,169 @@
+/* styles.css */
+@font-face {
+    font-family: Hacuia;
+    src: url(/fonts/hacuia.otf);
+}
+body {
+    font-family: "Hacuia";
+    background: url(/images/kelly.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    color: white;
+}
+input{
+    background: transparent;
+    color: white;
+    font-size: 1em;
+    font-family: "Hacuia";
+}
+h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 0.75em;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #555;
+}
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #0fad56;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
+    opacity: 0.9;
+    z-index: 10;
+    font-size: 12px;
+    animation: slideIn 0.5s ease, fadeOut 2.5s ease 2.5s forwards;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+/* Media Queries for Different Devices */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5em;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .form-group input {
+        font-size: 0.9em;
+        padding: 0.4em;
+    }
+
+    button {
+        padding: 0.65em;
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 1em;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .form-group input {
+        font-size: 0.8em;
+        padding: 0.3em;
+    }
+
+    button {
+        padding: 0.6em;
+        font-size: 0.8em;
+    }
+}
+
+/* Large Screens and Desktops */
+@media (min-width: 1024px) {
+    .container {
+        padding: 2.5em;
+        max-width: 450px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .form-group input {
+        font-size: 1em;
+        padding: 0.6em;
+    }
+
+    button {
+        padding: 0.8em;
+        font-size: 1.1em;
+    }
+}
