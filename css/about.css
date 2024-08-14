@@ -16,8 +16,32 @@ header {
     text-align: center;
     padding: 1em 0;
 }
+.sections{
+    margin-top: 10px;
+}
+.sections section{
+    margin: 50px 10px;
+    text-align: center;
+}
+.sections section:last-child{
+    margin-bottom: 4rem;
+}
+.sections section h2{
+    margin-bottom: 10px;
+}
+.sections section p{
+    margin: 10px auto;
+    width: 80%;
+}
+.contact {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
 
 .contact-container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

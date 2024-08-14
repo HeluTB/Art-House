@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>
                 <a href="${contact.links.github}" target="_blank">GitHub</a> | 
                 <a href="${contact.links.telegram}" target="_blank">Telegram</a>|
-                <a href="${contact.links.email}" target="_blank">Email</a>
+                <a href="mailto:${contact.links.email}" target="_blank">Email</a>
             </p>
         `;
 
