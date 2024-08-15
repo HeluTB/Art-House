@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Kaleb Seyoum',
             profilePicture: 'https://via.placeholder.com/100',
             links: {
-                github: 'https://github.com/johndoe',
+                github: 'https://github.com/Kaleb00-00',
                 telegram: 'https://t.me/myusername',
                 email: 'Kalebseyoum099@gmail.com'
             }
         },
         {
             name: 'Helen Tewoldebirhan',
-            profilePicture: 'https://via.placeholder.com/100',
+            profilePicture: '/images/Helen.png',
             links: {
                 github: 'https://github.com/HeluTB',
                 telegram: 'https://t.me/Haulalala',
