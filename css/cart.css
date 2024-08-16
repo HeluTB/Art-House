@@ -144,6 +144,7 @@ svg{
     color: white;
     right: 0;
     margin-left: auto;
+    
 }
 .notification {
     position: fixed;
@@ -225,7 +226,35 @@ svg{
         z-index: 9;
     }
     .cartContainer{
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
+    }
+    .cartItem img{
+        width: 80px;
+    }
+    .cartItem h2{
+        font-size: 12px;
+    }
+    .cartItem p{
+        font-size: 10px;
+    }
+    .cartItem button{
+        position: absolute;
+        right: 0;
+    }
+    .bottom-div{
+        display: flex;
+        padding: 10px;
+    }
+    .bottom-div h3{
+        font-size: 12px;
+        margin-top: 10px;
+        color: rgb(27, 227, 9);
+    }
+    #checkoutButton{
+        font-size: 10px;
+        position: absolute;
+        right: 0;
     }
 }
