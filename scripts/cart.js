@@ -123,7 +123,13 @@ function showNotification(message) {
     checkoutButton.textContent = 'Proceed to Checkout';
     checkoutButton.id = 'checkoutButton';
     checkoutButton.addEventListener('click', function() {
-        window.location.href = 'credit.html';
+        if(!totalPrice > 0) {
+            showNotification("You have no items in your cart!");
+        }
+        else{
+            window.location.href = 'credit.html';
+        }
+        
     });
     bottomDiv.appendChild(checkoutButton);
     cartContainer.appendChild(bottomDiv);
