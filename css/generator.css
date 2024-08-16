@@ -13,7 +13,6 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
-	min-width: 960px;
 } 
 .navigation{
     top: 0;
@@ -132,7 +131,7 @@ input:focus {
 
 @media screen and (min-width: 280px) and (max-width: 920px) { 
 	.container { 
-		width: calc(40% - 2rem);
+		width: 100%;
 		/* background-size: cover;
 		background-position: center; */
 	} 
@@ -144,9 +143,13 @@ input:focus {
 }
 
 @media(max-width: 450px){
-	.container {
-        width: calc(40% - 2rem);
-    }
+	input{
+		width: 40%;
+	}
+	button{
+		font-size: 10px;
+		width: 40%;
+	}
     .open-sidebar-button{
         top: 0;
         left: 10;
