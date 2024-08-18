@@ -1,4 +1,4 @@
-/*   Unsplash
+/*   Unsplash api
 let generateImageForm = 
     document.getElementById('generate-image-form');
 let formInput = 
@@ -43,60 +43,70 @@ generateImageForm.addEventListener('submit', (e) => {
     }
 }) */
 
+// stability api
+// Getting references to the HTML elements
 let generateImageForm = 
-    document.getElementById('generate-image-form');
+    document.getElementById('generate-image-form');// Form element to generate an image
 let formInput = 
-    document.getElementById('input-value');
+    document.getElementById('input-value');// Input field where the user types their prompt
 let imageContainerText = 
-    document.getElementById('imageContainerText');
+    document.getElementById('imageContainerText');// Text element to show a message about the generated image
 let imageContainer = 
-    document.getElementById('images-visible');
+    document.getElementById('images-visible');// Container to show the generated image
+
 
 	  
 async function generateImage(prompt) {
-	const apiKey = 'sk-NJA6S5wI8MfMJ03Hyro7OjlKCSBPS2FTOIq8mksbNsAohIfv';
-	const engineId = 'stable-diffusion-xl-1024-v1-0'; // Replace with actual engine ID
+	const apiKey = 'sk-NJA6S5wI8MfMJ03Hyro7OjlKCSBPS2FTOIq8mksbNsAohIfv';// API key for authentication
+	const engineId = 'stable-diffusion-xl-1024-v1-0'; // Engine ID for the image generation engine
 
+	// URL for the API endpoint
 	const url = `https://api.stability.ai/v1/generation/${engineId}/text-to-image`;
   
+	// Payload containing the configuration for the image generation
 	const payload = {
-	  cfg_scale: 7,
-	  height: 1024,
-	  width: 1024,
-	  sampler: 'K_DPM_2_ANCESTRAL',
-	  samples: 1,
-	  steps: 30,
+	  cfg_scale: 7,// Configuration scale
+	  height: 1024,// Height of the generated image
+	  width: 1024, // Width of the generated image
+	  sampler: 'K_DPM_2_ANCESTRAL',// Sampler method for image generation
+	  samples: 1,// Number of images to generate
+	  steps: 30,// Number of steps for image generation
 	  text_prompts: [
 		{
-		  text: prompt,
-		  weight: 1
+		  text: prompt,// Text prompt for image generation
+		  weight: 1// Weight of the prompt
 		}
 	  ]
 	};
   
 	try {
+		 // Making a POST request to the image generation API
 	  const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-		  'Content-Type': 'application/json',
-		  'Authorization': `Bearer ${apiKey}`
+		  'Content-Type': 'application/json', // Content type for the request
+		  'Authorization': `Bearer ${apiKey}`// Authorization header with API key
 		},
-		body: JSON.stringify(payload)
+		body: JSON.stringify(payload)// Converting the payload to a JSON string
 	  });
   
+	   // Checking if the response was successful
 	  if (!response.ok) {
-		throw new Error(`HTTP error! Status: ${response.status}`);
+		throw new Error(`HTTP error! Status: ${response.status}`);// Throw an error if the request failed
 	  }
   
 	  const data = await response.json();
-	  console.log('Success:', data);
+	  console.log('Success:', data);// Logging the success response to the console
 
+	  // Updating the UI with the generated image
 	  imageContainerText.innerText = "Below is your generated Image:";
 	  imageContainer.style.display = "block";
 		
+	 // Extracting the base64 image data from the response
 	  const artifacts = data.artifacts;
 	  const base64Image = artifacts[0].base64;
 
+	  // Setting the source of the image element to the base64 image data
 	  let imageGenerated = document.querySelector('.my-generated-image');
 	  imageGenerated.src = "data:image/png;base64," + base64Image;
 	} catch (error) {
@@ -105,15 +115,15 @@ async function generateImage(prompt) {
 	}
 }
 
-
+// Adding an event listener to the form for the 'submit' event
 generateImageForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let enteredText = formInput.value;
-    if (enteredText !== "") {
-        generateImage(enteredText);
+    e.preventDefault();// Preventing the default form submission behavior
+    let enteredText = formInput.value;// Getting the text entered by the user
+    if (enteredText !== "") {// Checking if the input is not empty
+        generateImage(enteredText);// Generating the image with the entered text
     }
     else {
         imageContainerText.innerText = 
-            "Input field can not be empty!";
+            "Input field can not be empty!";// Showing an error message if the input is empty
     }
 })
