@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contacts = [
         {
             name: 'Kaleb Seyoum',
-            profilePicture: 'https://via.placeholder.com/100',
+            profilePicture: '/images/kaleb.png',
             links: {
                 github: 'https://github.com/Kaleb00-00',
                 telegram: 'https://t.me/myusername',
