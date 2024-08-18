@@ -96,17 +96,18 @@ svg{
 	background-repeat: no-repeat; 
 	background-size: cover; 
 	color: #fff; 
+    backdrop-filter: blur(8px);
 } 
 
 /* Heading styling within the container */
 .heading { 
-	color: #318C46; 
+	color: rgb(84, 61, 16); 
 } 
 
 /* Centered headings styling */
 .headings-container { 
 	text-align: center; 
-	color: black; 
+	color: rgb(214, 225, 213); 
 } 
 /* Form control styling */
 .form-controls { 
