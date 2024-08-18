@@ -1,6 +1,9 @@
-const buyBtn = document.querySelector(".Buy");
-buyBtn.addEventListener('click', ()=>{
-  window.location.href = '/html/credit.html';
+const buyBtns = document.querySelectorAll(".Buy");
+
+buyBtns.forEach(buyBtn => {
+    buyBtn.addEventListener('click', () => {
+        window.location.href = '/html/credit.html';
+    });
 });
 function showNotification(message) {
     let notification = document.createElement('div');
