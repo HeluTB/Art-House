@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: 'Tsion Fikru',
-            profilePicture: 'https://via.placeholder.com/100', // Placeholder image used here
+            profilePicture: '/images/tsi.jpg', // Placeholder image used here
             links: {
                 github: 'https://github.com/tseon-designs',
                 telegram: 'https://t.me/zeee27',
