@@ -1,43 +1,54 @@
+/* Universal selector to reset margin, padding, and box-sizing for all elements */
 *{
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    scroll-padding-top: 110px;
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    scroll-padding-top: 110px; /* Offset for smooth scrolling */
 }
+
+/* Styling the body with a background image and a fallback font stack */
 body{
-    background-image: url(/images/leaf1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url(/images/leaf1.jpg); /* Background image for the body */
+    background-size: cover; /* Ensure the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Font stack for cross-platform compatibility */
 }
+
+/* Navigation bar styling */
 .navigation{
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px;
-    position: fixed;
+    position: fixed; /* Fixes the navigation bar to the top */
     align-items: center;
     display: flex;
-    background-color: black;
-    z-index: 2;
-    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
+    background-color: black; /* Black background for the navbar */
+    z-index: 2; /* Ensures the navbar is above other elements */
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5); /* Adds a shadow to the navbar */
 }
+
+/* Navigation links styling */
 .navigation a{
     margin-right: 25px;
     display: block;
-    color:white;
+    color: white;
     align-items: center;
     padding: 8px;
-    opacity: 0.7;
+    opacity: 0.7; /* Slightly transparent links */
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.2s; /* Smooth transition for hover effect */
 }
+
+/* Hover and focus state for navigation links */
 .navigation a:hover,
 .navigation a:focus{
-    transform: translatey(-5px);
-    opacity: 1;
+    transform: translatey(-5px); /* Move link slightly up on hover */
+    opacity: 1; /* Fully opaque on hover */
 }
+
+/* Underline effect on hover for navigation links */
 .navigation a:after{
     content: "";
     display: block;
@@ -47,58 +58,79 @@ body{
     opacity: 0;
     transition: 0.35s;
 }
+
+/* Paragraph inside the navigation bar */
 .navigation p{
-    color: white;
+    color: white; /* White text color */
 }
 
+/* Underline appears on hover or focus */
 .navigation a:hover::after,
 .navigation a:focus::after{
     opacity: 1;
 }
+
+/* Heading styling */
 h1{
     margin-bottom: 50px;
     font-size: 32px;
     text-align: center;
 }
+
+/* Button styling */
 button{
     margin: 10px 10px;
     padding: 10px;
     border: none;
     text-decoration: none;
-    border-radius: 12rem;
-    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
-    opacity: 0.7;
-    transition: 0.5s ease 0s;
+    border-radius: 12rem; /* Rounded button corners */
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5); /* Button shadow */
+    opacity: 0.7; /* Slight transparency */
+    transition: 0.5s ease 0s; /* Smooth transition on hover */
 }
+
+/* Button hover effect */
 button:hover{
-    cursor: pointer;
-    opacity: 1;
+    cursor: pointer; /* Change cursor to pointer */
+    opacity: 1; /* Fully opaque on hover */
 }
+
+/* SVG styling */
 svg{
-    fill: rgb(23, 100, 194);
+    fill: rgb(23, 100, 194); /* Fill color for SVG elements */
     border: none;
 }
+
+/* Sidebar active state, initially hidden */
 #sidebar-active{
     display: none;
 }
+
+/* Sidebar toggle buttons, initially hidden */
 .open-sidebar-button, .close-sidebar-button{
     display: none;
 }
+
+/* Cart container styling */
 .cartContainer{
-    background-color: #fff;
+    background-color: #fff; /* White background for the cart container */
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for cart container */
     padding: 20px;
     max-width: 800px;
-    margin: 100px auto;
-    width: calc(85% - 2em);
+    margin: 100px auto; /* Center the container */
+    width: calc(85% - 2em); /* Responsive width calculation */
 }
+
+/* Cart item styling */
 .cartItem{
-    display: flex;
+    display: flex; /* Flexbox layout for cart items */
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; /* Border at the bottom of each cart item */
 }
+
+/* Image inside the cart item */
 .cartItem img{
     width: 100px;
     height: 100px;
@@ -106,15 +138,21 @@ svg{
     border-radius: 4px;
     margin-right: 20px;
 }
+
+/* Inner div within cart item */
 .cartItem inner-div{
     flex-grow: 1;
 }
+
+/* Cart item heading */
 .cartItem h2{
     font-size: 18px;
     font-weight: bold;
     color: #333;
     margin-bottom: 0.5rem;
 }
+
+/* Additional heading in cart item */
 .cartItem h3{
     font-size: 180px;
     font-weight: bold;
@@ -122,45 +160,57 @@ svg{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
+/* Cart item paragraph */
 .cartItem p{
     margin-bottom: 0.5rem;
 }
+
+/* Button inside the cart item */
 .cartItem button{
-    background-color: red;
+    background-color: red; /* Red background for remove button */
     margin-left: auto;
     color: #fff;
 }
+
+/* Bottom div inside cart */
 .bottom-div{
     margin: 0;
     display: flex;
     padding: 10px;
 }
+
+/* Heading inside the bottom div */
 .bottom-div h3{
     margin-top: 10px;
     color: rgb(27, 227, 9);
 }
+
+/* Checkout button styling */
 #checkoutButton{
-    background-color: rgb(35, 139, 26);
+    background-color: rgb(35, 139, 26); /* Green background for checkout button */
     color: white;
     right: 0;
     margin-left: auto;
-    
 }
+
+/* Notification styling */
 .notification {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #0fad56;
+    background-color: #0fad56; /* Green background for notifications */
     color: #fff;
     padding: 10px 20px;
     border-radius: 12px;
-    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5); /* Shadow for notifications */
     opacity: 0.9;
-    z-index: 10;
+    z-index: 10; /* Ensure notification is on top */
     font-size: 12px;
-    animation: slideIn 0.5s ease, fadeOut 3s ease 2.5s forwards;
+    animation: slideIn 0.5s ease, fadeOut 3s ease 2.5s forwards; /* Slide in and fade out animations */
 }
 
+/* Slide-in animation for notifications */
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -169,15 +219,19 @@ svg{
         transform: translateX(0);
     }
 }
+
+/* Fade-out animation for notifications */
 @keyframes fadeOut {
     to {
         opacity: 0;
         transform: translateX(100%);
     }
 }
+
+/* Responsive styles for screens with a max-width of 450px */
 @media(max-width: 450px){
     *{
-        scroll-padding-top: 90px;
+        scroll-padding-top: 90px; /* Adjust scroll padding for smaller screens */
     }
     .open-sidebar-button{
         top: 0;
@@ -189,12 +243,12 @@ svg{
         align-items: flex-start;
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -100%; /* Hide the sidebar initially */
         width: 250px;
         z-index: 10;
-        background-color: black;
+        background-color: black; /* Black background for sidebar */
         box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25); 
-        transition: 0.75s ease; 
+        transition: 0.75s ease; /* Smooth transition for sidebar */
     }
     .navigation a{
         box-sizing: border-box;
@@ -212,10 +266,10 @@ svg{
     }
     .open-sidebar-button, .close-sidebar-button{
         padding: 20px;
-        display: block;
+        display: block; /* Display sidebar toggle buttons */
     }
     #sidebar-active:checked ~ .navigation{
-        left: 0;
+        left: 0; /* Slide the sidebar in when active */
     }
     #sidebar-active:checked ~ #overlay{
         width: 100%;
@@ -231,13 +285,13 @@ svg{
         flex-wrap: wrap;
     }
     .cartItem img{
-        width: 80px;
+        width: 80px; /* Smaller image size for cart items */
     }
     .cartItem h2{
-        font-size: 12px;
+        font-size: 12px; /* Smaller heading font size */
     }
     .cartItem p{
-        font-size: 10px;
+        font-size: 10px; /* Smaller paragraph font size */
     }
     .cartItem button{
         position: absolute;
@@ -248,12 +302,12 @@ svg{
         padding: 10px;
     }
     .bottom-div h3{
-        font-size: 12px;
+        font-size: 12px; /* Smaller heading font size */
         margin-top: 10px;
         color: rgb(27, 227, 9);
     }
     #checkoutButton{
-        font-size: 10px;
+        font-size: 10px; /* Smaller checkout button font size */
         position: absolute;
         right: 0;
     }
