@@ -1,8 +1,11 @@
-/* styles.css */
+/* Import a custom font named "Hacuia" from the specified URL */
 @font-face {
     font-family: Hacuia;
     src: url(/fonts/hacuia.otf);
 }
+
+/* General body styling: apply the custom font, set the background image, 
+   and center the content both vertically and horizontally */
 body {
     font-family: "Hacuia";
     background: url(/images/kelly.jpg);
@@ -16,6 +19,8 @@ body {
     box-sizing: border-box;
 }
 
+/* Container styling: add a transparent background, border, and blur effect, 
+   with a shadow and padding for spacing. Set the maximum width and center the content */
 .container {
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -27,29 +32,38 @@ body {
     width: 100%;
     color: white;
 }
-input{
+
+/* Input field styling: make the input fields transparent with white text, 
+   using the custom font and standard font size */
+input {
     background: transparent;
     color: white;
     font-size: 1em;
     font-family: "Hacuia";
 }
+
+/* Heading styling: center the text, add margin for spacing, and set the font size */
 h2 {
     text-align: center;
     margin-bottom: 1em;
     font-size: 1.5em;
-    
 }
 
+/* Form group styling: add margin for spacing between form elements */
 .form-group {
     margin-bottom: 1em;
 }
 
+/* Label styling: ensure labels are displayed as block elements with bold text, 
+   and add margin for spacing */
 .form-group label {
     display: block;
     margin-bottom: 0.5em;
     font-weight: bold;
 }
 
+/* Input field within form group styling: make input fields fill the container width, 
+   add padding, and style the borders and corners */
 .form-group input {
     width: 100%;
     padding: 0.5em;
@@ -58,6 +72,8 @@ h2 {
     font-size: 1em;
 }
 
+/* Button styling: make buttons full width, add padding, 
+   set the background color, and style the text and border radius */
 button {
     width: 100%;
     padding: 0.75em;
@@ -69,9 +85,14 @@ button {
     font-size: 1em;
 }
 
+/* Button hover effect: change the background color when the user hovers over the button */
 button:hover {
     background-color: #555;
 }
+
+/* Notification styling: position the notification in the top-right corner, 
+   add background color, padding, and a box shadow. 
+   Use animations for sliding in and fading out */
 .notification {
     position: fixed;
     top: 20px;
@@ -86,6 +107,8 @@ button:hover {
     font-size: 12px;
     animation: slideIn 0.5s ease, fadeOut 2.5s ease 2.5s forwards;
 }
+
+/* Slide-in animation for notification: starts off-screen and moves to the visible area */
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -94,15 +117,18 @@ button:hover {
         transform: translateX(0);
     }
 }
+
+/* Fade-out animation for notification: gradually fades out and slides out of the screen */
 @keyframes fadeOut {
     to {
         opacity: 0;
         transform: translateX(100%);
     }
 }
+
 /* Media Queries for Different Devices */
 
-/* Tablets */
+/* Tablet styling: adjust padding, max-width, and font sizes for better readability on tablets */
 @media (max-width: 768px) {
     .container {
         padding: 1.5em;
@@ -124,7 +150,7 @@ button:hover {
     }
 }
 
-/* Mobile Devices */
+/* Mobile device styling: further reduce padding and font sizes for optimal display on small screens */
 @media (max-width: 480px) {
     .container {
         padding: 1em;
@@ -146,7 +172,8 @@ button:hover {
     }
 }
 
-/* Large Screens and Desktops */
+/* Large screens and desktops styling: increase padding, max-width, and font sizes 
+   to make use of the larger screen space */
 @media (min-width: 1024px) {
     .container {
         padding: 2.5em;
