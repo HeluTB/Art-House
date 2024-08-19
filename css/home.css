@@ -1,41 +1,52 @@
+/* General styling for all elements */
 *{
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    scroll-padding-top: 110px;
+    scroll-behavior: smooth; /* Smooth scrolling for in-page links */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    scroll-padding-top: 110px; /* Offset for smooth scrolling to account for fixed header */
 }
+
+/* Styling for the body */
 body{
-    background: linear-gradient(to bottom, rgb(255, 255, 255) 30%, white, );
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 30%, white); /* Gradient background from white to white */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Fallback font stack */
 }
+
+/* Navigation bar styling */
 .navigation{
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px;
-    position: fixed;
+    position: fixed; /* Fix navigation to the top of the page */
     align-items: center;
     display: flex;
-    background: url(/images/kelly.jpg);
-    z-index: 2;
-    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
+    background: url(/images/kelly.jpg); /* Background image for navigation bar */
+    z-index: 2; /* Ensure navigation stays on top */
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5); /* Slight shadow below the navigation */
 }
+
+/* Styling for navigation links */
 .navigation a{
     margin-right: 25px;
     display: block;
-    color:white;
+    color: white;
     align-items: center;
     padding: 8px;
     opacity: 0.7;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.2s; /* Smooth transition for hover effects */
 }
+
+/* Hover and focus effects for navigation links */
 .navigation a:hover,
 .navigation a:focus{
-    transform: translatey(-5px);
-    opacity: 1;
+    transform: translatey(-5px); /* Slight upward movement */
+    opacity: 1; /* Full opacity on hover */
 }
+
+/* Add a white underline on hover/focus */
 .navigation a:after{
     content: "";
     display: block;
@@ -43,39 +54,50 @@ body{
     height: 3px;
     background-color: white;
     opacity: 0;
-    transition: 0.35s;
+    transition: 0.35s; /* Smooth transition for underline */
 }
 
+/* Make the underline visible on hover/focus */
 .navigation a:hover::after,
 .navigation a:focus::after{
     opacity: 1;
 }
+
+/* Styling for buttons */
 button{
     border: none;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 12rem;
+    border-radius: 12rem; /* Fully rounded corners */
     color: white;
 }
+
+/* Styling for login button */
 #login{
     margin-right: 20px;
     margin-left: auto;
     width: 90px;
-    background-color: whitesmoke;
-    transition: 0.5s ease;
+    background-color: whitesmoke; /* Light background color */
+    transition: 0.5s ease; /* Smooth transition for hover effect */
     opacity: 0.7;
     color: black;
     font-size: 1rem;
 }
+
+/* Hover effect for login button */
 #login:hover{
-    opacity: 1;
-    cursor: pointer;
+    opacity: 1; /* Full opacity on hover */
+    cursor: pointer; /* Change cursor to pointer */
 }
+
+/* Heading section styling */
 .heading{
     margin-top: 85px;
     padding: 20px;
     text-align: center;  
 }
+
+/* Styling for h3 inside heading */
 .heading h3 {
     margin: 10px auto;
     width: 80%;
@@ -83,68 +105,87 @@ button{
     color: rgb(45, 18, 18);
 }
 
+/* Styling for a specific button with id "generator" */
 #generator{
     width: 150px;
-    background-image: linear-gradient(to right,  #00ff00, #00ffff, #0000ff, #ff00ff, #ff6b6b, #ffa500, #ffff00);
-    background-size: 200% 200%;
-    animation: gradient 5s ease infinite 0s;
+    background-image: linear-gradient(to right, #00ff00, #00ffff, #0000ff, #ff00ff, #ff6b6b, #ffa500, #ffff00); /* Rainbow gradient background */
+    background-size: 200% 200%; /* Make the background larger for the animation */
+    animation: gradient 5s ease infinite 0s; /* Infinite gradient animation */
     left: 10px;
 }
+
+/* Hover effect for "generator" button */
 #generator:hover{
     cursor: pointer;
-  }
+}
 
-  @keyframes gradient {
+/* Keyframes for the gradient animation */
+@keyframes gradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
 }
+
+/* Gallery section styling */
 .gallery{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap items to the next line if necessary */
     justify-content: center;
     padding: 1em;
 }
+
+/* Styling for individual art items in the gallery */
 .art-item {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 1em;
     padding: 1em;
-    width: calc(33% - 2em);
+    width: calc(33% - 2em); /* Responsive width calculation */
     max-width: fit-content;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+/* Hover effect for art items */
 .art-item:hover {
-    transform: scale(1.05);
-} 
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Styling for images inside art items */
 .art-item img {
     max-width: 100%;
-    height: 50dvh;
-    object-fit: cover;
+    height: 50dvh; /* Height relative to viewport height */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
     border-radius: 8px;
-    transition: transform(0.3s);
-} 
+    transition: transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Styling for h2 inside art items */
 .art-item h2 {
     margin: 0.5em 0;
     font-size: 1.2em;
 }
-  
+
+/* Styling for paragraphs inside art items */
 .art-item p {
     margin: 0.5em 0;
     color: #555;
 }
+
+/* Specific font styling for elements with class "artist" */
 .artist {
     font-family: Hacuia;
     font-style: italic;
 }
+
+/* Styling for buttons inside gallery */
 .gallery button {
     background-color: rgb(57, 33, 164);
     color: white;
@@ -154,15 +195,21 @@ button{
     min-width: 35%;
     max-width: 40%;
     border-radius: 10px;
-    transition: transform 0.3s;
-  }
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+/* Hover effect for buttons inside gallery */
 .gallery button:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    cursor: pointer; /* Change cursor to pointer */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
+/* Styling for visited buttons inside gallery */
 .gallery button:visited {
-    background-color: rgb(20, 15, 59);
+    background-color: rgb(20, 15, 59); /* Darker color for visited buttons */
 }
+
+/* Container for elements related to generation */
 .generateContainer{
     margin-top: 1.5rem;
     margin-bottom: 2rem;
@@ -173,17 +220,23 @@ button{
     justify-content: center;
     text-align: center;
 }
+
+/* Styling for paragraphs inside generate container */
 .generateContainer p {
     width: 80%;
     font-size: 18px;
     font-weight: lighter;
     padding: 20px;
 }
+
+/* Styling for span elements */
 span {
     padding-top: 2%;
     display: flex;
     justify-content: space-around;
 }
+
+/* Footer styling */
 footer{
     padding: 10px;
     bottom: 0px;
@@ -194,26 +247,40 @@ footer{
     text-align: center;
     color: white;
 }
+
+/* Styling for links inside footer */
 footer a{
     text-decoration: none;
     color: white;
 }
+
+/* Styling for a specific button with id "rocket" */
 #rocket{
     border: none;
 }
+
+/* Hover effect for "rocket" button */
 #rocket:hover{
     cursor: pointer;
 }
+
+/* Styling for SVG elements */
 svg{
-    fill: rgb(23, 100, 194);
+    fill: rgb(23, 100, 194); /* Specific fill color for SVGs */
     border: none;
 }
+
+/* Styling for sidebar when active */
 #sidebar-active{
-    display: none;
+    display: none; /* Hidden by default */
 }
+
+/* Styling for open and close sidebar buttons */
 .open-sidebar-button, .close-sidebar-button{
-    display: none;
+    display: none; /* Hidden by default */
 }
+
+/* Notification styling */
 .notification {
     position: fixed;
     top: 20px;
@@ -222,13 +289,14 @@ svg{
     color: #fff;
     padding: 10px 20px;
     border-radius: 12px;
-    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5);
+    box-shadow:  0 5px 5px rgba(114, 112, 112, 0.5); /* Slight shadow for depth */
     opacity: 0.9;
-    z-index: 10;
+    z-index: 10; /* Ensure notification stays on top */
     font-size: 12px;
-    animation: slideIn 0.5s ease, fadeOut 3s ease 2.5s forwards;
+    animation: slideIn 0.5s ease, fadeOut 3s ease 2.5s forwards; /* Slide in and fade out animation */
 }
 
+/* Keyframes for the slide-in animation */
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -237,35 +305,39 @@ svg{
         transform: translateX(0);
     }
 }
+
+/* Keyframes for the fade-out animation */
 @keyframes fadeOut {
     to {
         opacity: 0;
         transform: translateX(100%);
     }
 }
+
+/* Responsive design for screens smaller than 450px */
 @media(max-width: 450px){
     *{
-        scroll-padding-top: 90px;
+        scroll-padding-top: 90px; /* Adjust scroll padding for smaller screens */
     }
     .open-sidebar-button{
         top: 0;
         left: 10;
-        position: fixed;
+        position: fixed; /* Fix button to top left */
     }
     .navigation{
         flex-direction: column;
         align-items: flex-start;
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -100%; /* Hide navigation off-screen */
         width: 250px;
         z-index: 10;
         background-image: none;
-        background-color: rgba(0,0,0, 0.9);
+        background-color: rgba(0,0,0, 0.9); /* Semi-transparent black background */
         box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25); 
         border-bottom-right-radius: 6px;
         border-top-right-radius: 6px;
-        transition: 0.75s ease; 
+        transition: 0.75s ease;  /* Smooth slide-in transition */
     }
     .navigation a{
         box-sizing: border-box;
@@ -275,7 +347,7 @@ svg{
         justify-content: flex-start;
     }
     .navigation a:after{
-        display: none;
+        display: none; /* Remove underline effect */
     }
     .navigation #login{
         margin: auto;
@@ -286,7 +358,7 @@ svg{
         display: block;
     }
     #sidebar-active:checked ~ .navigation{
-        left: 0;
+        left: 0; /* Show sidebar when active */
     }
     #sidebar-active:checked ~ #overlay{
         width: 100%;
@@ -297,20 +369,24 @@ svg{
         z-index: 9;
     }
 }
+
+/* Responsive design for screens smaller than 768px */
 @media (max-width: 768px) {
     .art-item {
-      width: calc(45% - 2em);
+      width: calc(45% - 2em); /* Adjust item width for smaller screens */
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+/* Responsive design for screens smaller than 480px */
+@media (max-width: 480px) {
     .art-item {
-      width: calc(100% - 2em);
+      width: calc(100% - 2em); /* Full-width items for very small screens */
     }
-  }
-  @media (min-width: 1025px) {
+}
+
+/* Increase button font size for larger screens */
+@media (min-width: 1025px) {
     button {
       font-size: large;
     }
-  }
-
+}
