@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: 'Tsion Fikru',
-            profilePicture: '/images/tsi.jpg', // Placeholder image used here
+            profilePicture: '/images/Tseon.jpg', // Placeholder image used here
             links: {
                 github: 'https://github.com/tseon-designs',
                 telegram: 'https://t.me/zeee27',
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set the inner HTML of the contact card with contact details and links
         contactCard.innerHTML = `
-            <img src="${contact.profilePicture}" alt="${contact.name}"> <!-- Profile picture -->
+            <img src="${contact.profilePicture}" alt="${contact.name}" style="object-fit: cover;"> <!-- Profile picture -->
             <h2>${contact.name}</h2> <!-- Contact name -->
             <p>
                 <a href="${contact.links.github}" target="_blank">GitHub</a> | <!-- GitHub link -->
