@@ -60,7 +60,7 @@ function showNotification(message) {
   }
     
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.includes('index.html')) {
+    if (window.location.pathname.includes('home.html')) {
         setupHomePage();
     }
   });

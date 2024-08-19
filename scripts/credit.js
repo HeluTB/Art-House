@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Redirect to the index page after 3 seconds
         setTimeout(function() {
-            window.location.href = '/html/index.html';
+            window.location.href = '/html/home.html';
         }, 3000);
     }
 });

@@ -64,7 +64,7 @@ loginBtn.addEventListener("click", (e) => {
 loginBtn2.addEventListener("click", (e) => {
     e.preventDefault();
     if(validateLoginForm()){
-        window.location.href = '/html/index.html';
+        window.location.href = '/html/home.html';
         console.log(1);
     }
 });
