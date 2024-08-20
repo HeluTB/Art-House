@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             links: {
                 github: 'https://github.com/kidus-yoseph-t',
                 telegram: 'https://t.me/Kidusy1',
-                email: '' // Email link left empty
+                email: 'Kidusy1a@gmail.com' // Email link left empty
             }
         },
         {
