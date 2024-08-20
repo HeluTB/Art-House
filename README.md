@@ -27,21 +27,21 @@ open it in visual studio afterwards
 ```
 To start, first open the index.html file after that you'll find the page below.
 ```
-![Login Page](https://i.imgur.com/un6IdU9.jpeg)
-![Register Page](https://i.imgur.com/hdcseOw.jpeg)
+![Login Page](https://i.imgur.com/RgCimBP.png)
+![Register Page](https://i.imgur.com/mbkthMf.png)
 ```
 Then either login or register if you don't have an account.
 
 If you did the above steps succesfully, you'll be redirected 
 to the home page where you can browse different types of artworks available.
 ```
-![Home Page](https://i.imgur.com/Mm8RS6z.jpeg)
+![Home Page](https://i.imgur.com/ZDRoudP.png)
 ```
 If you like one of the artworks and want to buy them, all you need 
 to do is click the buy button. Soon you will be redirected to the payment page
 where you'll be asked for your payment information.
 ```
-![Payment Information Page](https://i.imgur.com/yeuxRgX.jpeg)
+![Payment Information Page](https://i.imgur.com/GjnLRhh.png)
 ```
 But sometimes, you might need more than a single art. Well you're in luck;
 instead of buying each art one by one, you can add them to your cart and
@@ -49,27 +49,26 @@ buy them all at once.
 
 To access or view your cart item, you can access your cart in the navigation bar.
 ```
-![Cart Page](https://i.imgur.com/TNiRYUX.jpeg)
-```
+![Cart Page](https://i.imgur.com/9RylPY6.png)
 Let's say you can't find an art that piques your interest, we got you covered then too.
 We have a "Generate your own art" section for people with exquisite taste.
 
 To access it, you can either find it at the navigation bar or the bottom of the home page
 and click the `Generate` button.
 ```
-![Home Page Generate Section](https://i.imgur.com/HJqSt6X.jpeg)
+![Home Page Generate Section](https://i.imgur.com/ED8hfv1.png)
 ```
 Once you're redirected to art generation page, you can type your prompt
 for the art you want then press the `Generate Image` button; 
 after a while, your own custom artwork will appear as shown below. Since the size of the generated images are large in size, we recommend you to be patient while it loads, also to maintain a stable internet connection while loading the image.
 ```
-![Generate Page](https://i.imgur.com/pdvuw62.jpeg)
-![Generate image Page](https://i.imgur.com/y1oqsML.jpeg)
+![Generate Page](https://i.imgur.com/RxX3UrV.png)
+![Generate image Page](https://i.imgur.com/mpFj0q2.png)
 ```
 If you have any questions or feedback and want to know more about us 
 you can find our socials in the "About" us page by using the link on the nav bar
 ```
-![contact us Page](https://i.imgur.com/5ZTxuA8.jpeg)
+![contact us Page](https://i.imgur.com/PmHEOGL.png)
 
 
 ## Lessons Learned
